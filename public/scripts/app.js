@@ -39,8 +39,9 @@ sampleAlbums.push({
 
 $(document).ready(function() {
   console.log('app.js loaded!');
-  renderAlbum(sampleAlbums[0]);
-
+  sampleAlbums.forEach(function (album) {
+    renderAlbum(album);
+  });
 
 });
 
@@ -52,7 +53,6 @@ $(document).ready(function() {
 function renderAlbum(album) {
   console.log('rendering album:', album);
   var albumHtml = $('#album-template').html();
-  console.log(albumHtml);
   var albumsTemplate = Handlebars.compile(albumHtml);
   var html = albumsTemplate(album);
   $('#albums').prepend(html);

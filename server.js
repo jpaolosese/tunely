@@ -10,7 +10,7 @@ app.use(express.static(__dirname + '/public'));
 
 // We'll serve jQuery and bootstrap from a local bower cache avoiding CDNs
 // We're placing these under /vendor to differentiate them from our own assets
-app.use('/vendor', express.static(__dirname + '/bower_components'));
+//app.use('/vendor', express.static(__dirname + '/bower_components'));
 
 var controllers = require('./controllers');
 
@@ -32,7 +32,9 @@ app.get('/', function homepage (req, res) {
  * JSON API Endpoints
  */
 
-app.get('/api', controllers.api.index);
+//app.get('/api', controllers.api.index);
+
+app.get('/api/albums', controllers.albums.index);
 
 /**********
  * SERVER *
