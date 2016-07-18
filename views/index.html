@@ -4,16 +4,16 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>tunely</title>
+    <title>tunely.</title>
 
     <!-- STYLESHEETS -->
-    <link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link rel="stylesheet" href="styles/styles.css">
 
     <!-- VENDOR SCRIPTS -->
-    <script src="vendor/jQuery/dist/jquery.min.js"></script>
-    <script src="vendor/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="vendor/handlebars/handlebars.min.js"></script>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
 
     <!-- APPLICATION SCRIPTS -->
     <script src="scripts/app.js"></script>
@@ -38,6 +38,7 @@
 
 
 
+        <script id='album-template' type='text/x-handlebars-template'>
           <!-- one album -->
           <div class="row album">
 
@@ -56,17 +57,17 @@
                       <ul class="list-group">
                         <li class="list-group-item">
                           <h4 class='inline-header'>Album Name:</h4>
-                          <span class='album-name'>Ladyhawke</span>
+                          <span class='album-name'>{{name}}</span>
                         </li>
 
                         <li class="list-group-item">
                           <h4 class='inline-header'>Artist Name:</h4>
-                          <span class='artist-name'>Ladyhawke</span>
+                          <span class='artist-name'>{{artistName}}</span>
                         </li>
 
                         <li class="list-group-item">
-                          <h4 class='inline-header'>Released date:</h4>
-                          <span class='album-releaseDate'>2008, November 18</span>
+                          <h4 class='inline-header'>Release date:</h4>
+                          <span class='album-releaseDate'>{{releaseDate}}</span>
                         </li>
                       </ul>
                     </div>
@@ -82,7 +83,7 @@
             </div>
           </div>
           <!-- end one album -->
-
+        </script>
 
 
 
