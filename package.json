@@ -19,6 +19,7 @@
   "homepage": "https://github.com/tgaff/tunely#readme",
   "dependencies": {
     "bower": "^1.7.8",
-    "express": "^4.14.0"
+    "express": "^4.14.0",
+    "mongoose": "^4.5.5"
   }
 }
