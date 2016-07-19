@@ -85,13 +85,30 @@ function handleNewSongSubmit(e) {
     name: $songNameModal.val(),
     trackNumber: $trackNumberModal.val()
   };
-  // get album ID
+  //get album ID
   var albumId = $modal.data('albumId');
   console.log(albumId + ': ' + dataToPost);
-  // POST to SERVER
-  // clear form
-  // close modal
-  // update the correct album to show the new song
+  //POST to SERVER
+  var urlToPostServer = '/api/albums' + albumId + '/songs';
+  //ajax post
+  $.post(urlToPostServer, dataToPost, function(data) {
+    // clear form
+    $songNameModal.val('');
+    $trackNumberModal.val('');
+
+    // close modal
+    $modal.modal('hide');
+
+    // update the correct album to show the new song
+    $.get('/api/albums' + albumId, function(data) {
+      //erases current album data instance
+      $('[data-album-id=' + albumId + ']').remove();
+      //rerenders it with new album data
+      renderAlbum(data);
+    });
+  }).error(function(err) {  //error handling
+    console.log('ERROR. sorry, post attempt resulted in error', err);
+  });
 }
 
 // $("form").on("submit", function handleClick(event) {
