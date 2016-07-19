@@ -1,5 +1,5 @@
 var mongoose = require("mongoose");
-var song = require('./songs.js')
+var song = require('./song.js')
 var Schema = mongoose.Schema;
 
 var AlbumSchema = new Schema({
@@ -7,7 +7,7 @@ var AlbumSchema = new Schema({
   name: String,
   releaseDate: String,
   genres: [ String ],
-  songs = Song.schema
+  songs : [ song.schema ]
 });
 
 var Album = mongoose.model('Album', AlbumSchema);
