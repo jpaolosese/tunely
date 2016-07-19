@@ -100,7 +100,7 @@
 
         <script id='album-template' type='text/x-handlebars-template'>
           <!-- one album -->
-          <div class="row album">
+          <div class="row album" data-album-id="{{_id}}">
 
             <div class="col-md-10 col-md-offset-1">
               <div class="panel panel-default">
@@ -141,6 +141,7 @@
                   <!-- end of album internal row -->
 
                   <div class='panel-footer'>
+                    <button class='btn btn-primary add-song'>Add Song</button>
                   </div>
 
                 </div>
@@ -156,7 +157,7 @@
     </section>
 
     <!-- begin songModal: this is not visible until you call .modal() on it -->
-    <div class="modal fade" tabindex="-1" role="dialog" id="songModal">
+    <div class="modal fade" tabindex="-1" role="dialog" id="songModal" data-album-id="{{_id}}">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
